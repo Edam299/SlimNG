@@ -1,0 +1,76 @@
+/* Sidenav */
+.sidenav-toolbar {
+    padding: 10px 16px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .mat-nav-list a {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .mat-nav-list a:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .mat-nav-list a.active-link {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .mat-nav-list mat-icon {
+    margin-right: 12px;
+    color: #4caf50; /* Green color for icons */
+  }
+  
+  .mat-nav-list span {
+    font-size: 16px;
+  }
+  
+  /* Toolbar */
+  .toolbar-button {
+    color: white;
+  }
+  
+  .toolbar-separator {
+    height: 40px;
+    width: 1px;
+    background-color: #ccc;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  /* Avatar */
+  .avatar {
+    margin-right: 10px;
+  }
+  
+  /* Username */
+  .username {
+    font-size: 16px;
+    color: white;
+    margin-right: 10px;
+  }
+  
+  /* Sidenav Toggle */
+  .sidenav-toggle {
+    background-color: #4caf50;
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .mat-nav-list a {
+      font-size: 14px;
+    }
+  
+    .content {
+      margin-top: 70px;
+    }
+  }
+  

@@ -1,0 +1,15 @@
+<mat-dialog-content [formGroup]="form">
+  <mat-form-field>
+    <input matInput placeholder="ID Commande" formControlName="idcmd" type="number">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Date" formControlName="date" type="date">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Fournisseur ID" formControlName="idF" type="number">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button class="mat-raised-button" (click)="close()">Close</button>
+  <button class="mat-raised-button mat-primary" (click)="save()">Save</button>
+</mat-dialog-actions>

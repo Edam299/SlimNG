@@ -1,0 +1,58 @@
+<div fxLayout="row" fxLayoutAlign="end center">
+    <button (click)="open()" class="custom-button">
+      <mat-icon>add</mat-icon>
+      Create new
+    </button>
+  </div>
+  
+  <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Commande 123" #input>
+  </mat-form-field>
+  
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+  
+      <!-- ID Column -->
+      <ng-container matColumnDef="idcmd">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.idcmd}} </td>
+      </ng-container>
+  
+      <!-- Date Column -->
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.date | date}} </td>
+      </ng-container>
+  
+      <!-- Fournisseur Column -->
+      <ng-container matColumnDef="fournisseur">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Fournisseur </th>
+        <td mat-cell *matCellDef="let element"> {{element.idF}} </td>
+      </ng-container>
+  
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button class="btn-edit" matTooltip="Modifier" (click)="openEdit(element.idcmd)">
+            <mat-icon>edit_note</mat-icon>
+          </button>
+          <button mat-icon-button class="btn-delete" matTooltip="Supprimer" (click)="delete(element.idcmd)">
+            <mat-icon>delete_forever</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+      <!-- Row shown when there is no matching data -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+      </tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of commandes"></mat-paginator>
+  </div>
+  

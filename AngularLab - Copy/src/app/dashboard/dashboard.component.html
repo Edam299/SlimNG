@@ -1,0 +1,42 @@
+<div class="dashboard-cards"> 
+  <mat-card class="stat-card products">
+    <mat-card-title>
+      <mat-icon class="icon">inventory</mat-icon> Produits
+    </mat-card-title>
+    <mat-card-content class="content">{{ NbProduits }}</mat-card-content>
+  </mat-card>
+
+  <mat-card class="stat-card suppliers">
+    <mat-card-title>
+      <mat-icon class="icon">local_shipping</mat-icon> Fournisseurs
+    </mat-card-title>
+    <mat-card-content class="content">{{ NbFournisseurs }}</mat-card-content>
+  </mat-card>
+
+  <mat-card class="stat-card orders">
+    <mat-card-title>
+      <mat-icon class="icon">shopping_cart</mat-icon> Commandes
+    </mat-card-title>
+    <mat-card-content class="content">{{ NbCommandes }}</mat-card-content>
+  </mat-card>
+</div>
+
+<div class="charts-container">
+  <div class="chart-wrapper">
+    <canvas baseChart
+      [type]="'line'"
+      [datasets]="chartData"
+      [labels]="chartLabels"
+      [options]="chartOptions">
+    </canvas>
+  </div>
+
+  <div class="chart-wrapper">
+    <canvas baseChart
+      [type]="'pie'"
+      [datasets]="chartDataPie"
+      [labels]="chartLabelsPie"
+      [options]="chartOptions">
+    </canvas>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+mat-dialog-content {
+    min-height: 300px;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .produit-item {
+    border: 1px solid #eee;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    position: relative;
+  }
+  
+  button[color="warn"] {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+  
+  h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
